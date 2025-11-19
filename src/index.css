@@ -23,6 +23,6 @@
     @apply bg-[#F4F4F6] text-gray-900 antialiased;
   }
   main {
-    @apply bg-[#F4F4F6];
+    @apply bg-[#F4F4F6] min-h-screen mx-auto;
   }
 }

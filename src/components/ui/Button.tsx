@@ -23,7 +23,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			<button
 				ref={ref}
 				className={cn(
-					"inline-flex items-center justify-center gap-2 cursor-pointer font-medium leading-4.5 text-sm rounded-lg",
+					"flex items-center justify-center h-10 gap-2 px-4 py-2 cursor-pointer font-medium leading-4.5 text-sm rounded-lg",
 					variants[variant],
 					className
 				)}
