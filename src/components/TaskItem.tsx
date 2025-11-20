@@ -71,9 +71,28 @@ const TaskItem = ({ task }: TaskItemProps) => {
 			<div className="flex items-center gap-3 flex-1 min-w-0">
 				<button
 					onClick={() => toggleTask(task.id)}
-					className="shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors border-[#C4C4C4] bg-white hover:border-[#5285EC]"
+					className={`shrink-0 w-5 h-5 rounded-sm border-2 border-[#C4C4C4] flex items-center justify-center transition-colors relative ${
+						task.isCompleted ? "border-[#707070]" : "border-[#95A4AB]"
+					}`}
 				>
-					{task.isCompleted && "✔"}
+					{task.isCompleted && (
+						<svg
+							className="absolute -top-[7px] left-0"
+							width="28"
+							height="28"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M20 6L9 17L4 12"
+								stroke="#707070"
+								strokeWidth="3"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
+						</svg>
+					)}
 				</button>
 
 				{isEditing ? (
