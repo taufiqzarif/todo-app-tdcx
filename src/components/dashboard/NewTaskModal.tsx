@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "../ui/Card";
 import Button from "../ui/Button";
 import Input from "../ui/Input";
@@ -11,6 +11,17 @@ interface NewTaskModalProps {
 
 const NewTaskModal = ({ isOpen, onClose, onAdd }: NewTaskModalProps) => {
 	const [newTaskTitle, setNewTaskTitle] = useState("");
+
+	useEffect(() => {
+		if (isOpen) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "unset";
+		}
+		return () => {
+			document.body.style.overflow = "unset";
+		};
+	}, [isOpen]);
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
