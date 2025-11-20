@@ -8,7 +8,10 @@ interface CardProps {
 const Card = ({ children, className = "" }: CardProps) => {
 	return (
 		<div
-			className={cn("bg-white rounded-xl shadow-card-primary p-6", className)}
+			className={cn(
+				"bg-white sm:rounded-xl shadow-card-primary p-6",
+				className
+			)}
 		>
 			{children}
 		</div>
