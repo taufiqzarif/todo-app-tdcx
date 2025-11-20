@@ -5,7 +5,7 @@ const Navbar = ({ name }: { name: string }) => {
 	return (
 		<nav className="bg-white shadow-card sticky top-0 z-10 py-2">
 			<div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-				<div className="flex items-center gap-2">
+				<div className="flex items-center gap-4">
 					<img
 						src={avatar}
 						alt="User Avatar"
