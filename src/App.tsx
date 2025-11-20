@@ -5,12 +5,13 @@ import { TaskProvider } from "./context/TaskProvider";
 import { useAuth } from "./context/AuthContext";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import LoadingScreen from "./components/LoadingScreen";
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 	const { user, isLoading } = useAuth();
 
 	if (isLoading) {
-		return <div>Loading...</div>;
+		return <LoadingScreen />;
 	}
 
 	if (!user) {
@@ -24,7 +25,7 @@ const PublicRoute = ({ children }: { children: React.ReactNode }) => {
 	const { user, isLoading } = useAuth();
 
 	if (isLoading) {
-		return <div>Loading...</div>;
+		return <LoadingScreen />;
 	}
 
 	if (user) {

@@ -8,10 +8,11 @@ import TaskChart from "../components/TaskChart";
 import { useAuth } from "../context/AuthContext";
 import { useTasks } from "../context/TaskContext";
 import SearchIcon from "../assets/search-solid.svg";
+import Skeleton from "../components/ui/Skeleton";
 
 const Dashboard = () => {
 	const { user } = useAuth();
-	const { tasks, addTask } = useTasks();
+	const { tasks, addTask, isLoading } = useTasks();
 
 	const [searchQuery, setSearchQuery] = useState("");
 	const [newTaskTitle, setNewTaskTitle] = useState("");
@@ -54,7 +55,26 @@ const Dashboard = () => {
 		<main>
 			<Navbar name={user.name} />
 			<div className="max-w-6xl mx-auto sm:px-4 py-6 space-y-8">
-				{tasks.length === 0 ? (
+				{isLoading ? (
+					<div className="space-y-6">
+						<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+							<Card>
+								<Skeleton className="h-24 w-full" />
+							</Card>
+							<Card>
+								<Skeleton className="h-24 w-full" />
+							</Card>
+							<Card>
+								<Skeleton className="h-24 w-full" />
+							</Card>
+						</div>
+						<div className="space-y-4">
+							<Skeleton className="h-12 w-full" />
+							<Skeleton className="h-16 w-full" />
+							<Skeleton className="h-16 w-full" />
+						</div>
+					</div>
+				) : tasks.length === 0 ? (
 					// Empty state
 					<div className="absolute inset-0 flex items-center justify-center p-4">
 						<Card className="w-full max-w-sm py-12 flex flex-col items-center justify-center text-center shadow-card">

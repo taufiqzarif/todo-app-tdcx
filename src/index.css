@@ -26,3 +26,11 @@
     @apply bg-[#F4F4F6] min-h-screen mx-auto;
   }
 }
+
+.recharts-wrapper:focus,
+.recharts-surface:focus,
+.recharts-sector:focus,
+.recharts-layer:focus,
+.recharts-layer:focus {
+  outline: none !important;
+}
