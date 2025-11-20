@@ -16,14 +16,12 @@ const DashboardStats = ({ stats }: DashboardStatsProps) => {
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 				{/* Tasks Completed */}
 				<Card className="flex flex-col">
-					<p className="font-medium text-[#537178] text-xl leading-6 mb-4">
-						Tasks Completed
-					</p>
+					<p className="text-heading mb-4">Tasks Completed</p>
 					<div className="flex items-baseline gap-1">
-						<span className="text-[64px] leading-[78px] font-medium text-[#5285EC]">
+						<span className="text-[64px] leading-[78px] font-medium text-primary">
 							{stats.completed}
 						</span>
-						<span className="text-xl leading-6 text-[#8F9EA2] font-medium">
+						<span className="text-xl leading-6 text-tertiary font-medium">
 							/ {stats.total}
 						</span>
 					</div>
@@ -31,11 +29,9 @@ const DashboardStats = ({ stats }: DashboardStatsProps) => {
 
 				{/* Latest Created Tasks */}
 				<Card className="md:col-span-1">
-					<p className="font-medium text-[#537178] text-xl leading-6 mb-4">
-						Latest Created Tasks
-					</p>
+					<p className="text-heading mb-4">Latest Created Tasks</p>
 
-					<ul className="space-y-2 list-disc list-inside text-[#8F9EA2]">
+					<ul className="space-y-2 list-disc list-inside text-tertiary">
 						{stats.latest.map((task) => (
 							<li
 								key={task.id}

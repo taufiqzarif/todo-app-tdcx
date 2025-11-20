@@ -110,8 +110,8 @@ const TaskItem = ({ task }: TaskItemProps) => {
 					<span
 						className={`truncate font-medium text-xl ${
 							task.isCompleted
-								? "text-[#537178] line-through decoration-3"
-								: "text-[#5285EC]"
+								? "text-secondary line-through decoration-3"
+								: "text-primary"
 						}`}
 					>
 						{task.title}
@@ -124,14 +124,14 @@ const TaskItem = ({ task }: TaskItemProps) => {
 					<>
 						<button
 							onClick={() => setIsEditing(true)}
-							className="text-[#647278] hover:text-blue-500 transition-colors cursor-pointer"
+							className="text-icon hover:text-blue-500 transition-colors cursor-pointer"
 							disabled={task.isCompleted}
 						>
 							<PenIcon className="w-4 h-4" />
 						</button>
 						<button
 							onClick={() => deleteTask(task.id)}
-							className="text-[#647278] hover:text-red-500 transition-colors cursor-pointer"
+							className="text-icon hover:text-red-500 transition-colors cursor-pointer"
 						>
 							<TrashIcon className="w-4 h-4" />
 						</button>

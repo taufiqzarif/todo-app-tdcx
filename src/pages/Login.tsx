@@ -24,9 +24,7 @@ const Login = () => {
 		<main className="min-h-screen flex items-center justify-center">
 			<Card className="shadow-card w-[296px] h-[249px]">
 				<div className="text-left mb-6">
-					<h2 className="font-medium text-[20px] leading-6 text-[#537178]">
-						Login
-					</h2>
+					<h2 className="text-heading">Login</h2>
 				</div>
 
 				<form onSubmit={handleSubmit}>

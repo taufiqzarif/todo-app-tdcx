@@ -13,7 +13,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		ref
 	) => {
 		const variants = {
-			primary: "bg-[#5285EC] text-white hover:bg-blue-500 disabled:bg-blue-300",
+			primary: "bg-primary text-white hover:bg-blue-500 disabled:bg-blue-300",
 			secondary:
 				"bg-gray-500 text-white hover:bg-gray-600 disabled:bg-gray-300",
 			danger: "bg-red-500 text-white hover:bg-red-600 disabled:bg-red-300",

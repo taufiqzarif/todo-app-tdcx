@@ -15,23 +15,17 @@ const DashboardActions = ({
 }: DashboardActionsProps) => {
 	return (
 		<div className="flex flex-col sm:flex-row items-center justify-between gap-2 sticky top-20 z-10">
-			<h2 className="text-xl leading-6 text-[#537178] font-medium sm:w-auto">
-				Tasks
-			</h2>
+			<h2 className="text-heading sm:w-auto">Tasks</h2>
 			<div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto px-4 sm:px-0">
 				<div className="relative w-full sm:w-64">
 					<div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
-						<img
-							src={SearchIcon}
-							alt="Search"
-							className="w-4 h-4 text-[#647278]"
-						/>
+						<img src={SearchIcon} alt="Search" className="w-4 h-4 text-icon" />
 					</div>
 					<Input
 						placeholder="Search by task name"
 						value={searchQuery}
 						onChange={(e) => setSearchQuery(e.target.value)}
-						className="bg-[#D9DFEB] pl-10 text-center sm:text-left focus:bg-[#D9DFEB]"
+						className="bg-search pl-10 text-center sm:text-left focus:bg-search"
 					/>
 				</div>
 				<Button
