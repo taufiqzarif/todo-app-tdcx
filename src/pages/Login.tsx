@@ -2,15 +2,21 @@ import { useState } from "react";
 import Card from "../components/ui/Card";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-	const [userId, setUserId] = useState("");
-	const [username, setUsername] = useState("");
+	const [id, setId] = useState("");
+	const [name, setName] = useState("");
+
+	const { login } = useAuth();
+	const navigate = useNavigate();
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		if (userId.trim() && username) {
-			console.log(userId, username);
+		if (id.trim() && name) {
+			login(id, name);
+			navigate("/");
 		}
 	};
 
@@ -29,8 +35,8 @@ const Login = () => {
 							id="userId"
 							type="text"
 							placeholder="Id"
-							value={userId}
-							onChange={(e) => setUserId(e.target.value)}
+							value={id}
+							onChange={(e) => setId(e.target.value)}
 							required
 						/>
 
@@ -38,8 +44,8 @@ const Login = () => {
 							id="username"
 							type="text"
 							placeholder="Name"
-							value={username}
-							onChange={(e) => setUsername(e.target.value)}
+							value={name}
+							onChange={(e) => setName(e.target.value)}
 							required
 						/>
 
