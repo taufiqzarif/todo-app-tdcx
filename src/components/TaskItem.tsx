@@ -124,14 +124,14 @@ const TaskItem = ({ task }: TaskItemProps) => {
 					<>
 						<button
 							onClick={() => setIsEditing(true)}
-							className="text-[#647278] hover:text-blue-500 transition-colors"
+							className="text-[#647278] hover:text-blue-500 transition-colors cursor-pointer"
 							disabled={task.isCompleted}
 						>
 							<PenIcon className="w-4 h-4" />
 						</button>
 						<button
 							onClick={() => deleteTask(task.id)}
-							className="text-[#647278] hover:text-red-500 transition-colors"
+							className="text-[#647278] hover:text-red-500 transition-colors cursor-pointer"
 						>
 							<TrashIcon className="w-4 h-4" />
 						</button>
