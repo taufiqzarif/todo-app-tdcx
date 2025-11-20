@@ -4,6 +4,7 @@ import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
 import Navbar from "../components/Navbar";
 import TaskItem from "../components/TaskItem";
+import TaskChart from "../components/TaskChart";
 import { useAuth } from "../context/AuthContext";
 import { useTasks } from "../context/TaskContext";
 import SearchIcon from "../assets/search-solid.svg";
@@ -102,7 +103,9 @@ const Dashboard = () => {
 								</Card>
 
 								{/* Chart */}
-								<Card>Chart</Card>
+								<Card className="flex items-center justify-center p-4">
+									<TaskChart completed={stats.completed} total={stats.total} />
+								</Card>
 							</div>
 						</section>
 
