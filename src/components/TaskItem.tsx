@@ -3,6 +3,38 @@ import type { Task } from "../types";
 import { useTasks } from "../context/TaskContext";
 import Input from "./ui/Input";
 
+const PenIcon = (props: React.SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="16.443"
+		height="16.443"
+		viewBox="0 0 16.443 16.443"
+		fill="currentColor"
+		{...props}
+	>
+		<path
+			d="M8.989,3.007l4,4-9,9h-3a1.029,1.029,0,0,1-1-1v-3Zm7-1-2-2a1.358,1.358,0,0,0-2,0l-2,2,4,4,2-2A1.358,1.358,0,0,0,15.989,2.007Z"
+			transform="translate(0.014 0.433)"
+		/>
+	</svg>
+);
+
+const TrashIcon = (props: React.SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="16"
+		height="18.13"
+		viewBox="0 0 16 18.13"
+		fill="currentColor"
+		{...props}
+	>
+		<path
+			d="M15,1H11V0c-.145-.291-.675,0-1,0H6c-.325,0-.857-.292-1,0V1H1A1.577,1.577,0,0,0,0,2V3c0,.316.684,0,1,0H15c.316,0,1,.316,1,0V2A1.577,1.577,0,0,0,15,1ZM2,17c.057.9,1.095,1,2,1h8c.9,0,1.943-.1,2-1L15,5H1Z"
+			transform="translate(0 0.13)"
+		/>
+	</svg>
+);
+
 interface TaskItemProps {
 	task: Task;
 }
@@ -35,15 +67,11 @@ const TaskItem = ({ task }: TaskItemProps) => {
 	};
 
 	return (
-		<div className="flex items-center justify-between p-4 gap-4 borber-b border-[#E8E8E8] last:border-0 hover:bg-gray-50 transition-colors group">
+		<div className="flex items-center justify-between px-4 py-5 border-b-2 border-gray-200 last:border-0 hover:bg-gray-50 transition-colors group">
 			<div className="flex items-center gap-3 flex-1 min-w-0">
 				<button
 					onClick={() => toggleTask(task.id)}
-					className={`shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
-						task.isCompleted
-							? "bg-[#5285EC] border-[#5285EC]"
-							: "border-[#C4C4C4] bg-white hover:border-[#5285EC]"
-					}`}
+					className="shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors border-[#C4C4C4] bg-white hover:border-[#5285EC]"
 				>
 					{task.isCompleted && "✔"}
 				</button>
@@ -61,10 +89,10 @@ const TaskItem = ({ task }: TaskItemProps) => {
 					</div>
 				) : (
 					<span
-						className={`truncate font-medium ${
+						className={`truncate font-medium text-xl ${
 							task.isCompleted
 								? "text-gray-400 line-through decoration-2"
-								: "text-[#537178]"
+								: "text-[#5285EC]"
 						}`}
 					>
 						{task.title}
@@ -77,16 +105,16 @@ const TaskItem = ({ task }: TaskItemProps) => {
 					<>
 						<button
 							onClick={() => setIsEditing(true)}
-							className="text-gray-400 hover:text-blue-500 transition-colors"
+							className="text-[#647278] hover:text-blue-500 transition-colors"
 							disabled={task.isCompleted}
 						>
-							Edit
+							<PenIcon className="w-4 h-4" />
 						</button>
 						<button
 							onClick={() => deleteTask(task.id)}
-							className="text-gray-400 hover:text-red-500 transition-colors"
+							className="text-[#647278] hover:text-red-500 transition-colors"
 						>
-							Delete
+							<TrashIcon className="w-4 h-4" />
 						</button>
 					</>
 				)}
