@@ -52,7 +52,7 @@ const Dashboard = () => {
 	return (
 		<main>
 			<Navbar name={user.name} />
-			<div className="max-w-6xl mx-auto px-4 py-6 space-y-8">
+			<div className="max-w-6xl mx-auto sm:px-4 py-6 space-y-8">
 				{tasks.length === 0 ? (
 					// Empty state
 					<div className="absolute inset-0 flex items-center justify-center p-4">
@@ -107,12 +107,12 @@ const Dashboard = () => {
 						</section>
 
 						{/* Actions */}
-						<div className="flex flex-col sm:flex-row items-center justify-between gap-4 sticky top-20 z-10 py-2">
+						<div className="flex flex-col sm:flex-row items-center justify-between gap-2 sticky top-20 z-10">
 							<h2 className="text-xl leading-6 text-[#537178] font-medium sm:w-auto">
 								Tasks
 							</h2>
-							<div className="flex items-center gap-3 w-full sm:w-auto">
-								<div className="relative flex-1 sm:w-64">
+							<div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto px-4 sm:px-0">
+								<div className="relative w-full sm:w-64">
 									<div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
 										<img
 											src={SearchIcon}
@@ -124,15 +124,15 @@ const Dashboard = () => {
 										placeholder="Search by task name"
 										value={searchQuery}
 										onChange={(e) => setSearchQuery(e.target.value)}
-										className="bg-[#D9DFEB] pl-10"
+										className="bg-[#D9DFEB] pl-10 text-center sm:text-left"
 									/>
 								</div>
 								<Button
 									onClick={() => setIsAdding(true)}
 									variant="primary"
-									className="shrink-0"
+									className="shrink-0 w-full sm:w-auto"
 								>
-									New Task
+									+ New Task
 								</Button>
 							</div>
 						</div>

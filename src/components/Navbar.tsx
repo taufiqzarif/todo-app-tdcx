@@ -12,7 +12,9 @@ const Navbar = ({ name }: { name: string }) => {
 						className="w-12 h-12 rounded-full"
 					/>
 
-					<span className="font-medium text-base text-[#6D8187] hidden sm:inline">{name}</span>
+					<span className="font-medium text-base text-[#6D8187] inline">
+						{name}
+					</span>
 				</div>
 				<NavItems />
 			</div>
