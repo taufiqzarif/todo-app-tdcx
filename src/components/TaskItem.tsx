@@ -110,7 +110,7 @@ const TaskItem = ({ task }: TaskItemProps) => {
 					<span
 						className={`truncate font-medium text-xl ${
 							task.isCompleted
-								? "text-gray-400 line-through decoration-2"
+								? "text-[#537178] line-through decoration-3"
 								: "text-[#5285EC]"
 						}`}
 					>
